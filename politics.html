@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Politics</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    nav {
+      background-color: #1a237e;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-toggle {
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .menu a:hover {
+      color: #ffca28;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #1a237e;
+        width: 100%;
+        text-align: center;
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .menu a {
+        padding: 10px 0;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    .content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .video-container {
+      flex: 0 0 calc(33.33% - 20px); /* Each video takes up one-third of the width with some margin */
+      margin-right: 20px;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+
+    .additional-content {
+      flex: 0 0 calc(66.66% - 20px); /* Additional content takes up two-thirds of the width with some margin */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="politics.html" class="blinker">Muni Uni Politics</a>
+      <a href="#" id="interestsBtn">Interests</a>
+      <a href="#" id="projectsBtn">Projects</a>
+      <a href="contacts.html">Contact</a>
+      <a href="contacts.html"> </a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/EsRyyJmO-u8" frameborder="0" allowfullscreen controls></iframe>
+    </div>
+    <div class="additional-content">
+      <h2>Student Elections</h2>
+      <p>Learn about the vibrant student elections in universities, where aspiring leaders compete for various positions. Explore the challenges, strategies, and outcomes of these elections.</p>
+    </div>
+  </div>
+  
+  <div class="content">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/JnbQ6qwvHCA" frameborder="0" allowfullscreen controls></iframe>
+    </div>
+    <div class="additional-content">
+      <h2>Student Elections</h2>
+      <p>Learn about the vibrant student elections in universities, where aspiring leaders compete for various positions. Explore the challenges, strategies, and outcomes of these elections.</p>
+    </div>
+  </div>
+ 
+  <div class="content">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/JnbQ6qwvHCA" frameborder="0" allowfullscreen controls></iframe>
+    </div>
+    <div class="additional-content">
+      <h2>Student Elections</h2>
+      <p>Learn about the vibrant student elections in universities, where aspiring leaders compete for various positions. Explore the challenges, strategies, and outcomes of these elections.</p>
+    </div>
+  </div>
+  
+    <!-- Add more video and content pairs as needed -->
+
+  </div>
+
+  <footer>
+    &copy; 2024 University Politics. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

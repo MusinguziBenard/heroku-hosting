@@ -210,6 +210,56 @@
   color: #333;
 }
 
+#ai-assistant {
+      background-color: #17f426;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      position: fixed;
+      bottom: 50px; /* Adjusted position */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      z-index: 1;
+      animation: blink 2s infinite; /* Blink animation */
+    }
+
+    #chat-space {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      max-width: 500px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    #close-chat {
+      cursor: pointer;
+    }
+
+    #chat-messages {
+      margin-top: 10px;
+      color: rgb(254, 9, 180);
+    }
+
+    /* Blink animation keyframes */
+    @keyframes blink {
+      0%, 100% {
+        background-color: #17f426;
+        color: #fff;
+      }
+      50% {
+        background-color: #fd71d5;
+        color: #333;
+      }
+    }
+
 
     </style>
 </head>
@@ -289,8 +339,23 @@
 
     <section>
         <h2>Contact</h2>
-        <p>Feel free to reach out via email at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+        <p>Feel free to reach out via email at <a href="mailto:musinguzibenard37@gmail.com">musinguzibenard37@gmail.com</a>.</p>
     </section>
+
+  <!-- AI Assistant Button -->
+  <button id="ai-assistant" onclick="toggleChat()">AI Assistant</button>
+
+  <div id="chat-space">
+    <div id="close-chat" onclick="toggleChat()">Close Assistant</div>
+    <div id="chat-messages">
+      <!-- AI Assistant messages -->
+      <div class="assistant-message">Hello! Are you a student at Muni University? (Yes/No)</div>
+    </div>
+    <div id="user-input">
+      <input type="text" id="user-response" placeholder="Type your response...">
+      <button onclick="sendUserResponse()">Send</button>
+    </div>
+  </div>
 
     <footer>
         <p>&copy; 2023 Roche software engineering. All rights reserved.</p>
@@ -301,11 +366,81 @@
             const menu = document.querySelector('.menu');
             menu.classList.toggle('show');
         }
-    </script>
 
+        let isGuildPresidentCandidate = false;
+    let isGRCCandidate = false;
 
-    <!-- 100% privacy-first analytics -->
+    function processGuildElectionResponse(userResponse) {
+      const chatMessages = document.getElementById('chat-messages');
+      const assistantMessage = document.createElement('div');
+      assistantMessage.className = 'assistant-message';
+
+      switch (userResponse) {
+        case 'yes':
+          assistantMessage.textContent = "Great! Are you an aspiring candidate for the guild presidency? (Yes to presidency/ no to presidency)";
+          isGuildPresidentCandidate = true;
+          break;
+        case 'no':
+          assistantMessage.textContent = "This chat is specifically for candidates in the guild elections. If you have any other questions, feel free to ask or contact us at 0763313707.";
+          break;
+        case 'yes to presidency':
+          if (isGuildPresidentCandidate) {
+            assistantMessage.textContent = "Fantastic! As a guild president candidate, Wish you success in the forthcoming elections, contact us on 0763313707 for a live interview";
+          } else if (isGRCCandidate) {
+            assistantMessage.textContent = "Fantastic! As a GRC candidate, Wish you success in the forthcoming elections, contact us on 0763313707 for a live interview";
+          }
+          break;
+        case 'no to presidency':
+          if (isGuildPresidentCandidate) {
+            assistantMessage.textContent = "Thank you for your response. This chat is intended for candidates in the guild elections. If you have any other questions, feel free to ask or contact us at 0763313707.";
+          } else if (isGRCCandidate) {
+            assistantMessage.textContent = "Thank you for your response. If you have any other questions, feel free to ask or contact us at 0763313707.";
+          }
+          break;
+        default:
+          assistantMessage.textContent = "I'm sorry, I didn't understand. Please respond with tagged question response or contact 0763313707 for details!";
+          break;
+      }
+
+      // Display assistant's response in the chat
+      chatMessages.appendChild(assistantMessage);
+
+      // Clear the user's input field
+      document.getElementById('user-response').value = '';
+    }
+
+    // Function to toggle the chat space
+    function toggleChat() {
+      const chatSpace = document.getElementById('chat-space');
+      chatSpace.style.display = (chatSpace.style.display === 'none') ? 'block' : 'none';
+    }
+
+    // Function to send user response
+    function sendUserResponse() {
+      const userResponseInput = document.getElementById('user-response');
+      const userResponse = userResponseInput.value.trim().toLowerCase();
+      const chatMessages = document.getElementById('chat-messages');
+
+      // Display user's response in the chat
+      const userMessage = document.createElement('div');
+      userMessage.className = 'user-message';
+      userMessage.textContent = userResponse;
+      chatMessages.appendChild(userMessage);
+
+      // Process user's response to guild election questions
+      processGuildElectionResponse(userResponse);
+    }
+  </script>
+        
+
+        
+  
+    // </script>
+
+ddddddddddddddddddddoooooooowwwwwwnnnnnnnllllllloooooooaaaaaaaaaddddddd
+    // <!-- 100% privacy-first analytics -->
 <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+</csript>
 </body>
 </html>

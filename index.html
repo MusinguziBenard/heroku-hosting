@@ -116,9 +116,18 @@
 
         @media only screen and (max-width: 600px) {
             nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
 
             nav a {
                 display: block;
@@ -138,7 +147,7 @@
             }
 
             .nav-toggle {
-                display: block;
+                /* display: block; */
                 cursor: pointer;
                 position: fixed;
                 top: 10px;
@@ -146,11 +155,13 @@
                 z-index: 1001; /* Higher z-index to be above other content */
                 color: #fff;
                 font-size: 20px;
-                background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+                background: rgba(102, 247, 40, 0.7); /* Semi-transparent black background */
                 border: none;
                 padding: 10px;
                 border-radius: 50%;
                 transition: 0.5s;
+                padding-right: 420px;
+                
             }
 
             .menu {
@@ -259,6 +270,41 @@
         color: #333;
       }
     }
+    /* @media only screen and (max-width: 600px) { */
+    /* nav {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: flex-end; 
+        align-items: center;
+    }
+
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1001; /* Higher z-index to be above other content */
+        /* color: #fff;
+        font-size: 20px;
+        background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+        /* border: none; */
+        /* padding: 10px; */
+        /* border-radius: 50%; */
+        /* transition: 0.5s; */
+    /* } */
+/* } */ */ */
+
+    
+
+
+    
 
 
     </style>
@@ -273,7 +319,6 @@
     </header>
 
     <nav>
-        <div class="nav-toggle" onclick="toggleMenu()">☰</div>
         <div class="menu">
             <a href="#">Home</a>
             <a href="#">About</a>
@@ -282,10 +327,13 @@
             <a href="#" id="projectsBtn">Projects</a>
             <a href="contacts.html">Contact</a>
             <a href="contacts.html"> </a>
-
-            
         </div>
+        <div class="nav-toggle" onclick="toggleMenu()">☰</div> <!-- Move this line to the end -->
     </nav>
+
+
+    
+    
 
     
     <section class="hero-section">

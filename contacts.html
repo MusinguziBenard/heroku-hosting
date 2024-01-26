@@ -1,98 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roche solutions contacts</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <!-- Include Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* (Previous styles remain unchanged) */
 
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-        }
+    body {
+      background-color: grey;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            line-height: 1.6;
-            overflow: hidden; /* To contain floated elements */
-        }
+    /* Navigation Bar Styles */
+    nav {
+      background-color: #333;
+      padding: 15px 0;
+      text-align: center;
+    }
 
-        h2 {
-            color: #333;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
 
-        ol {
-            padding-left: 20px;
-        }
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-        }
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
 
-        /* Styles for different sections */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
 
-        /* Section 1: Installation */
-        section:nth-child(2) {
-            background-color: #f0f8ff; /* AliceBlue */
-            border: 2px solid #4682b4; /* SteelBlue */
-        }
+    .contact-item:hover {
+      transform: scale(1.1);
+    }
 
-        /* Section 2: Adding a New Member */
-        section:nth-child(3) {
-            background-color: #ffd700; /* Gold */
-            border: 2px solid #b8860b; /* DarkGoldenRod */
-        }
+    .icon {
+      margin-right: 10px;
+    }
 
-        /* Add styles for other sections as needed */
+    #ai-assistant {
+      background-color: #17f426;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      position: fixed;
+      bottom: 50px; /* Adjusted position */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      z-index: 1;
+      animation: blink 2s infinite; /* Blink animation */
+    }
 
-    </style>
+    #chat-space {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      max-width: 500px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    #close-chat {
+      cursor: pointer;
+    }
+
+    #chat-messages {
+      margin-top: 10px;
+      color: rgb(254, 9, 180);
+    }
+
+    /* Blink animation keyframes */
+    @keyframes blink {
+      0%, 100% {
+        background-color: #17f426;
+        color: #fff;
+      }
+      50% {
+        background-color: #fd71d5;
+        color: #333;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Roche solutions contacts</h1>
-        <p>A detailed guide on understanding and reaching out to us.</p>
-    </header>
 
-    <!-- Section 1: Installation -->
-    <section>
-        <h2>1. Installation</h2>
-        <ol>
-            <li><strong>Prerequisites:</strong> Ensure you have set up the required database for the system.</li>
-            <li><strong>Run the Application:</strong> Execute the application script to launch the system.</li>
-        </ol>
-    </section>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#"> </a>
+    <a href="#">Contact</a>
+  </nav>
 
-    <!-- Section 2: Adding a New Member -->
-    <section>
-        <h2>2. Adding a New Member</h2>
-        <ol>
-            <li><strong>Input Member Details:</strong> Fill in the member's first name, last name, and address in the provided entry fields.</li>
-            <li><strong>Add Member:</strong> Click the "Add Member" button to register the new member in the system.</li>
-            <li><strong>Success Message:</strong> Upon successful addition, a confirmation message will be displayed.</li>
-            <li><strong>Failure Message:</strong> In case of errors (e.g., incomplete fields), an error message will guide you on the issue.</li>
-        </ol>
-    </section>
+  <h1>Contact Us</h1>
 
-    <!-- Repeat the above structure for other sections -->
+  <div class="contacts">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/256763313707" style="color: #17f426; background-color: green;" target="_blank" class="contact-item">
+      <i class="fab fa-whatsapp icon"></i>
+      <span>WhatsApp</span>
+    </a>
 
-    <footer>
-        <p>&copy; 2023 Library Management System. All rights reserved.</p>
-    </footer>
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/yourpage" style="background-color:cornflowerblue" target="_blank" class="contact-item">
+      <i class="fab fa-facebook icon"></i>
+      <span>Facebook</span>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/youraccount" style="background-color: pink;" target="_blank" class="contact-item">
+      <i class="fab fa-instagram icon"></i>
+      <span>Instagram</span>
+    </a>
+
+    <!-- Gmail -->
+    <a href="mailto:musinguzibenard37@gmail" style="background-color: red;" class="contact-item">
+      <i class="far fa-envelope icon"></i>
+      <span>Email</span>
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/yourchannel" target="_blank" class="contact-item" style="background-color:rgb(249, 25, 66);">
+      <i class="fab fa-youtube icon"></i>
+      <span>YouTube</span>
+    </a>
+  </div>
+
+  <!-- AI Assistant Button -->
+  <button id="ai-assistant" onclick="toggleChat()">AI Assistant</button>
+
+  <div id="chat-space">
+    <div id="close-chat" onclick="toggleChat()">Close</div>
+    <div id="chat-messages">
+      <!-- AI Assistant messages -->
+      <div class="assistant-message">Hello! Are you a student at Muni University? (Yes/No)</div>
+    </div>
+    <div id="user-input">
+      <input type="text" id="user-response" placeholder="Type your response...">
+      <button onclick="sendUserResponse()">Send</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 University Camp. All rights reserved.
+  </footer>
+
+  <script>
+    let isGuildPresidentCandidate = false;
+    let isGRCCandidate = false;
+
+    function processGuildElectionResponse(userResponse) {
+      const chatMessages = document.getElementById('chat-messages');
+      const assistantMessage = document.createElement('div');
+      assistantMessage.className = 'assistant-message';
+
+      switch (userResponse) {
+        case 'yes':
+          assistantMessage.textContent = "Great! Are you an aspiring candidate for the guild presidency? (Yes to presidency/ no to presidency)";
+          isGuildPresidentCandidate = true;
+          break;
+        case 'no':
+          assistantMessage.textContent = "This chat is specifically for candidates in the guild elections. If you have any other questions, feel free to ask or contact us at 0763313707.";
+          break;
+        case 'yes to presidency':
+          if (isGuildPresidentCandidate) {
+            assistantMessage.textContent = "Fantastic! As a guild president candidate, Wish you success in the forthcoming elections, contact us on 0763313707 for a live interview";
+          } else if (isGRCCandidate) {
+            assistantMessage.textContent = "Fantastic! As a GRC candidate, Wish you success in the forthcoming elections, contact us on 0763313707 for a live interview";
+          }
+          break;
+        case 'no to presidency':
+          if (isGuildPresidentCandidate) {
+            assistantMessage.textContent = "Thank you for your response. This chat is intended for candidates in the guild elections. If you have any other questions, feel free to ask or contact us at 0763313707.";
+          } else if (isGRCCandidate) {
+            assistantMessage.textContent = "Thank you for your response. If you have any other questions, feel free to ask or contact us at 0763313707.";
+          }
+          break;
+        default:
+          assistantMessage.textContent = "I'm sorry, I didn't understand. Please respond with tagged question response or contact 0763313707 for details!";
+          break;
+      }
+
+      // Display assistant's response in the chat
+      chatMessages.appendChild(assistantMessage);
+
+      // Clear the user's input field
+      document.getElementById('user-response').value = '';
+    }
+
+    // Function to toggle the chat space
+    function toggleChat() {
+      const chatSpace = document.getElementById('chat-space');
+      chatSpace.style.display = (chatSpace.style.display === 'none') ? 'block' : 'none';
+    }
+
+    // Function to send user response
+    function sendUserResponse() {
+      const userResponseInput = document.getElementById('user-response');
+      const userResponse = userResponseInput.value.trim().toLowerCase();
+      const chatMessages = document.getElementById('chat-messages');
+
+      // Display user's response in the chat
+      const userMessage = document.createElement('div');
+      userMessage.className = 'user-message';
+      userMessage.textContent = userResponse;
+      chatMessages.appendChild(userMessage);
+
+      // Process user's response to guild election questions
+      processGuildElectionResponse(userResponse);
+    }
+  </script>
+
 </body>
 </html>

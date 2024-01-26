@@ -25,6 +25,7 @@
     .nav-toggle {
       font-size: 20px;
       cursor: pointer;
+      display: none; /* Hide the hamburger icon by default */
     }
 
     .menu {
@@ -64,7 +65,15 @@
       }
 
       .nav-toggle {
-        display: block;
+        display: block; /* Show the hamburger icon for small devices */
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .menu a {
+        padding: 10px 0;
       }
     }
 
@@ -78,15 +87,42 @@
       flex-wrap: wrap;
     }
 
+    .video-section {
+      margin: 20px 0;
+      width: 100%;
+    }
+
+    .video-table {
+      width: 100%;
+      border-spacing: 20px; /* Adjust the spacing between cells */
+    }
+
+    .video-heading,
+    .video-content,
+    .video-container,
+    .conclusive-remark {
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      background-color: #fff; /* Background color for the content */
+    }
+    .video-content{
+      background-color:aqua ;
+      border-radius: 30px;
+    }
+
+    .video-heading {
+      border-radius: 8px 8px 0 0; /* Adjusted border-radius for top corners */
+      background-color: #1a237e; /* Background color for the heading */
+      color: #fff; /* Text color for the heading */
+    }
+
     .video-container {
-      flex: 0 0 calc(33.33% - 20px); /* Each video takes up one-third of the width with some margin */
-      margin-right: 20px;
       padding-bottom: 56.25%; /* 16:9 aspect ratio */
       position: relative;
       overflow: hidden;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 8px 8px; /* Adjusted border-radius for bottom corners */
     }
 
     .video-container iframe {
@@ -98,13 +134,34 @@
       border-radius: 8px;
     }
 
-    .additional-content {
-      flex: 0 0 calc(66.66% - 20px); /* Additional content takes up two-thirds of the width with some margin */
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-    }
+
+    @media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(226, 227, 237, 0.9); /* Transparent background color */
+    backdrop-filter: blur(10px); /* Optional: Adds a blur effect */
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu a {
+    padding: 10px 0;
+    color: #fff; /* Text color for menu items */
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -114,7 +171,7 @@
     <div class="menu">
       <a href="#">Home</a>
       <a href="#">About</a>
-      <a href="politics.html" class="blinker">Muni Uni Politics</a>
+      <!-- <a href="politics.html" class="blinker">Muni Uni Politics</a> -->
       <a href="#" id="interestsBtn">Interests</a>
       <a href="#" id="projectsBtn">Projects</a>
       <a href="contacts.html">Contact</a>
@@ -122,42 +179,61 @@
     </div>
   </nav>
 
-  <div class="content">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/EsRyyJmO-u8" frameborder="0" allowfullscreen controls></iframe>
-    </div>
-    <div class="additional-content">
-      <h2>Student Elections</h2>
-      <p>Learn about the vibrant student elections in universities, where aspiring leaders compete for various positions. Explore the challenges, strategies, and outcomes of these elections.</p>
-    </div>
-  </div>
-  
-  <div class="content">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/JnbQ6qwvHCA" frameborder="0" allowfullscreen controls></iframe>
-    </div>
-    <div class="additional-content">
-      <h2>Student Elections</h2>
-      <p>Learn about the vibrant student elections in universities, where aspiring leaders compete for various positions. Explore the challenges, strategies, and outcomes of these elections.</p>
-    </div>
-  </div>
- 
-  <div class="content">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/JnbQ6qwvHCA" frameborder="0" allowfullscreen controls></iframe>
-    </div>
-    <div class="additional-content">
-      <h2>Student Elections</h2>
-      <p>Learn about the vibrant student elections in universities, where aspiring leaders compete for various positions. Explore the challenges, strategies, and outcomes of these elections.</p>
-    </div>
-  </div>
-  
-    <!-- Add more video and content pairs as needed -->
+  <div class="video-section">
+    <table class="video-table">
+      <tr>
+        <td class="video-heading" colspan="3">
+          <h2>Muni university Student Elections on your handset</h2>
+        </td>
+      </tr>
 
+      <tr >
+        
+      </tr>
+      <tr>
+        <td class="video-content">
+          <h1>Message From GRC for Technoscience</h1>
+          <p>I'm excited to be running for GRC in Computer Science. If elected, I'll focus on three key areas:
+
+            
+            Collaborations.
+            
+            Opportunities.
+            
+            Together, let's shape a thriving Computer Science department. Vote for Wandera Julius - Your Voice, Your Choice!
+            
+            Thank you!
+            
+            </p>
+        </td>
+        <!-- <td class="video-container" colspan="2">
+          <<iframe src="https://www.youtube.com/embed/EsRyyJmO-u8" frameborder="0" allowfullscreen controls></iframe> -->
+        <!-- </td> --> 
+        <td class="conclusive-remark">
+          <iframe src="https://www.youtube.com/embed/Ua0yjk618Hk?si=ODTwf7h6RrIVEAcS" frameborder="0" allowfullscreen controls></iframe>
+        </td>
+      </tr colspan='100%'>
+
+      <td colspan="100%" style="color: green; font: 1em sans-serif;font-size: x-large; justify-content: right;">Message from Guild president Aspirants in your room</td>
+      <tr>
+        <td class="video-content">
+          <h1>Message From Guild President Aspiring coming soon</h1>
+          <p>Learn about the vibrant guild student elections in universities, where aspiring leaders compete for various positions. Explore the challenges, strategies, and outcomes of these elections.</p>
+        </td>
+        <!-- <td class="video-container" colspan="2">
+          <<iframe src="https://www.youtube.com/embed/EsRyyJmO-u8" frameborder="0" allowfullscreen controls></iframe> -->
+        <!-- </td> --> 
+        <td class="conclusive-remark">
+          <iframe src="https://www.youtube.com/embed/EsRyyJmO-u8" frameborder="0" allowfullscreen controls></iframe>
+        </td>
+      </tr>
+    </table>
   </div>
+
+  <!-- Repeat the structure for additional videos -->
 
   <footer>
-    &copy; 2024 University Politics. All rights reserved.
+    &copy; 2024 University Politics. All rights reserved.   Call for interview 0763313707
   </footer>
 
   <script>

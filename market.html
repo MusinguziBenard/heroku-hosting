@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muni Market Hub</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgb(218, 221, 221);
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        .item-card {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .item-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .item-card h5 {
+            font-family: 'Arial', sans-serif; /* Default font */
+            color: #333;
+        }
+
+        /* Customize fonts, colors, and sizes for individual items */
+        .item-card.custom1 h5 {
+            font-family: 'Times New Roman', serif;
+            color: #007BFF; /* Blue */
+            font-size: 20px;
+        }
+
+        .item-card.custom2 h5 {
+            font-family: 'Courier New', monospace;
+            color: #28A745; /* Green */
+            font-size: 18px;
+        }
+
+        .item-card.custom3 h5 {
+            font-family: 'Verdana', sans-serif;
+            color: #DC3545; /* Red */
+            font-size: 22px;
+        }
+    </style>
+
+    <header>
+        <div class="container">
+            <h1><a href="#">Muni Market Hub</a></h1>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Kayas Makerere">Kayas Makerere</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="market.html">MUni Market</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="politics.html">Muni Politics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="me.html">About Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container">
+        <h2>Welcome to Muni Market Hub</h2>
+        <p>Discover and buy items from fellow students.</p>
+    </section>
+
+    <section id="items" class="container">
+        <h2>Available Items</h2>
+        <div class="row">
+            <!-- Item cards will be dynamically added here using JavaScript -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Muni Market Hub</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Dummy data for items
+            const itemsData = [
+                { name: "Laptop", description: "Powerful laptop for your needs.", price: "800", contact: "seller@example.com", customClass: "custom1" },
+                { name: "Mobile Phone", description: "Latest smartphone with amazing features.", price: "500", contact: "seller2@example.com", customClass: "custom2" },
+                { name: "Camera", description: "High-quality camera for capturing moments.", price: "600", contact: "seller3@example.com", customClass: "custom3" },
+                // Add more items as needed
+            ];
+
+            // Function to create item card
+            function createItemCard(item) {
+                const card = document.createElement("div");
+                card.classList.add("card", "col-md-4", "mb-4", "item-card", item.customClass);
+
+                const img = document.createElement("img");
+                img.src = "item_image.jpg"; // Replace with the actual image source
+                img.alt = item.name;
+                img.classList.add("card-img-top");
+
+                const cardBody = document.createElement("div");
+                cardBody.classList.add("card-body");
+
+                const name = document.createElement("h5");
+                name.classList.add("card-title");
+                name.textContent = item.name;
+
+                const description = document.createElement("p");
+                description.classList.add("card-text");
+                description.textContent = item.description;
+
+                const price = document.createElement("p");
+                price.classList.add("card-text");
+                price.textContent = `Price: ${item.price}`;
+
+                const contact = document.createElement("p");
+                contact.classList.add("card-text");
+                contact.textContent = `Contact: ${item.contact}`;
+
+                cardBody.appendChild(name);
+                cardBody.appendChild(description);
+                cardBody.appendChild(price);
+                cardBody.appendChild(contact);
+
+                card.appendChild(img);
+                card.appendChild(cardBody);
+
+                return card;
+            }
+
+            // Function to populate items on page load
+            function populateItems(data) {
+                const itemList = document.getElementById("items");
+
+                data.forEach(item => {
+                    const card = createItemCard(item);
+                    itemList.querySelector(".row").appendChild(card);
+                });
+            }
+
+            // Call the function to populate items on page load
+            populateItems(itemsData);
+        });
+    </script>
+</body>
+</html>

@@ -139,68 +139,69 @@
 
     <!-- Custom JavaScript -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Dummy data for items
-            const itemsData = [
-                { name: "Laptop", description: "Powerful laptop for your needs.", price: "800", contact: "seller@example.com", customClass: "custom1" },
-                { name: "Mobile Phone", description: "Latest smartphone with amazing features.", price: "500", contact: "seller2@example.com", customClass: "custom2" },
-                { name: "Camera", description: "High-quality camera for capturing moments.", price: "600", contact: "seller3@example.com", customClass: "custom3" },
-                // Add more items as needed
-            ];
+document.addEventListener("DOMContentLoaded", function () {
+    // Dummy data for items
+    const itemsData = [
+        { name: "Laptop", description: "Powerful laptop for your needs.", price: "UGX.800,000/=", contact: "2201200218@muni.ac.ug", customClass: "custom1", image: "laptop.png" },
+        { name: "HP Printer", description: "Brand new printer with a high speed.", price: "UGX.820,000/=", contact: "2201200218@muni.ac.ug", customClass: "custom2", image: "printer.webp" },
+        { name: "Gas Cylinder", description: "High-quality gas cylinder for a quicker meal.", price: "UGX120,000/=", contact: "0783876705", customClass: "custom3", image: "stabex.png" },
+        // Add more items as needed
+    ];
 
-            // Function to create item card
-            function createItemCard(item) {
-                const card = document.createElement("div");
-                card.classList.add("card", "col-md-4", "mb-4", "item-card", item.customClass);
+    // Function to create item card
+    function createItemCard(item) {
+        const card = document.createElement("div");
+        card.classList.add("card", "col-md-4", "mb-4", "item-card", item.customClass);
 
-                const img = document.createElement("img");
-                img.src = "item_image.jpg"; // Replace with the actual image source
-                img.alt = item.name;
-                img.classList.add("card-img-top");
+        const img = document.createElement("img");
+        img.src = item.image; // Use the actual image source from item data
+        img.alt = item.name;
+        img.classList.add("card-img-top");
 
-                const cardBody = document.createElement("div");
-                cardBody.classList.add("card-body");
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
 
-                const name = document.createElement("h5");
-                name.classList.add("card-title");
-                name.textContent = item.name;
+        const name = document.createElement("h5");
+        name.classList.add("card-title");
+        name.textContent = item.name;
 
-                const description = document.createElement("p");
-                description.classList.add("card-text");
-                description.textContent = item.description;
+        const description = document.createElement("p");
+        description.classList.add("card-text");
+        description.textContent = item.description;
 
-                const price = document.createElement("p");
-                price.classList.add("card-text");
-                price.textContent = `Price: ${item.price}`;
+        const price = document.createElement("p");
+        price.classList.add("card-text");
+        price.textContent = `Price: ${item.price}`;
 
-                const contact = document.createElement("p");
-                contact.classList.add("card-text");
-                contact.textContent = `Contact: ${item.contact}`;
+        const contact = document.createElement("p");
+        contact.classList.add("card-text");
+        contact.textContent = `Contact: ${item.contact}`;
 
-                cardBody.appendChild(name);
-                cardBody.appendChild(description);
-                cardBody.appendChild(price);
-                cardBody.appendChild(contact);
+        cardBody.appendChild(name);
+        cardBody.appendChild(description);
+        cardBody.appendChild(price);
+        cardBody.appendChild(contact);
 
-                card.appendChild(img);
-                card.appendChild(cardBody);
+        card.appendChild(img);
+        card.appendChild(cardBody);
 
-                return card;
-            }
+        return card;
+    }
 
-            // Function to populate items on page load
-            function populateItems(data) {
-                const itemList = document.getElementById("items");
+    // Function to populate items on page load
+    function populateItems(data) {
+        const itemList = document.getElementById("items");
 
-                data.forEach(item => {
-                    const card = createItemCard(item);
-                    itemList.querySelector(".row").appendChild(card);
-                });
-            }
-
-            // Call the function to populate items on page load
-            populateItems(itemsData);
+        data.forEach(item => {
+            const card = createItemCard(item);
+            itemList.querySelector(".row").appendChild(card);
         });
+    }
+
+    // Call the function to populate items on page load
+    populateItems(itemsData);
+});
+
     </script>
 </body>
 </html>

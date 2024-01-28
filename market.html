@@ -122,7 +122,7 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Kayas Makerere">Kayas Makerere</a>
+                        <a class="nav-link" href="https://kayas-mak.herokuapp.com/pages/muk/muktopstories">Kayas Makerere</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="market.html">MUni Market</a>
@@ -143,7 +143,7 @@
 
     <section class="container">
         <h2>Welcome to Muni Market Hub</h2>
-        <p>Discover and buy items from fellow students.</p>
+        <marquee><p style="color: #0bff07;">Discover and buy items from fellow students.</p></marquee>
     </section>
 
     <section id="items" class="container">
@@ -169,9 +169,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Dummy data for items
     const itemsData = [
+        { name: "Liquid Soap", description: "Tested and purified liquild soap at an affordable price, but of the best quality on the market.", price: "UGX.1000/=  and above", contact: "0740976687", customClass: "custom3", image: "soap.jpg" },
+        { name: "Irish (Noel Foods)", description: "Best-quality irish for a quicker meal and can make your skin look nicer.", price: "UGX.35,000/= (Basin)", contact: "0761461226", customClass: "custom3", image: "irish.jpg" },
         { name: "Laptop", description: "Powerful laptop for your needs.", price: "UGX.800,000/=", contact: "2201200218@muni.ac.ug", customClass: "custom1", image: "laptop.png" },
         { name: "HP Printer", description: "Brand new printer with a high speed.", price: "UGX.820,000/=", contact: "2201200218@muni.ac.ug", customClass: "custom2", image: "printer.webp" },
         { name: "Gas Cylinder", description: "High-quality gas cylinder for a quicker meal.", price: "UGX120,000/=", contact: "0783876705", customClass: "custom3", image: "stabex.png" },
+
         // Add more items as needed
     ];
 
